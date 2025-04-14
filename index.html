@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harsh Bansal - Academic & RPA Professional</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1f456e;
+            --secondary: #4a7dad;
+            --light: #f5f7fa;
+            --dark: #333;
+            --accent: #e67e22;
+            --border: #ddd;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 30px 0;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+            margin-bottom: 15px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            max-width: 700px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 15px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-item a:hover {
+            color: var(--accent);
+        }
+        
+        nav {
+            background-color: white;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+        }
+        
+        .nav-links li a {
+            display: block;
+            padding: 15px 20px;
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-links li a:hover {
+            color: var(--accent);
+        }
+        
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .skill-category {
+            flex: 1;
+            min-width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .skill-list {
+            list-style: none;
+        }
+        
+        .skill-list li {
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+        }
+        
+        .skill-list li i {
+            color: var(--secondary);
+            margin-right: 10px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+            margin-bottom: 30px;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            top: 18px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            z-index: 1;
+        }
+        
+        .timeline-item.left {
+            left: 0;
+        }
+        
+        .timeline-item.right {
+            left: 50%;
+        }
+        
+        .timeline-item.left::after {
+            right: -10px;
+        }
+        
+        .timeline-item.right::after {
+            left: -10px;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-content h3 {
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .timeline-content p.date {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .timeline-content .tasks {
+            margin-top: 10px;
+            list-style-type: circle;
+            padding-left: 20px;
+        }
+        
+        .timeline-content .tasks li {
+            margin-bottom: 5px;
+        }
+        
+        .publications-container, 
+        .certifications-container,
+        .awards-container,
+        .trainings-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .publication-item,
+        .certification-item,
+        .award-item,
+        .training-item {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            padding: 20px;
+        }
+        
+        .publication-item h3,
+        .certification-item h3,
+        .award-item h3,
+        .training-item h3 {
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+        
+        .publication-item p,
+        .certification-item p,
+        .award-item p,
+        .training-item p {
+            margin-bottom: 10px;
+        }
+        
+        .date-badge {
+            display: inline-block;
+            padding: 3px 10px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-top: 5px;
+        }
+        
+        footer {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 30px 0;
+            margin-top: 40px;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: var(--accent);
+        }
+        
+        @media (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px;
+                padding-right: 10px;
+            }
+            
+            .timeline-item.left, .timeline-item.right {
+                left: 0;
+            }
+            
+            .timeline-item.left::after, .timeline-item.right::after {
+                left: 10px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header id="home">
+        <div class="container header-content">
+            <img src="/api/placeholder/400/400" alt="Harsh Bansal" class="profile-img">
+            <h1>Harsh Bansal</h1>
+            <p class="tagline">Educator | Mentor to National-Level Winning Teams - Smart India Hackathon '23 & '24 | Blockchain Enthusiast | Programming Expert in DS & DAA | Certified Blue Prism Developer | Advanced RPA Professional (Automation Anywhere)</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <a href="mailto:harshbansal@live.com">harshbansal@live.com</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <a href="tel:+918283059300">+91-8283059300</a>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>Mohali, Punjab, India</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <a href="https://linkedin.com/in/harshbansallive" target="_blank">linkedin.com/in/harshbansallive</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation Section -->
+    <nav>
+        <div class="container">
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#awards">Awards</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <p>With over 10 years of teaching experience, I am passionate about empowering students to excel in their careers through education, mentorship, and hands-on training. Currently, I serve as an Assistant Professor at SPSU, specializing in Blockchain, RPA (Robotic Process Automation), Programming and Algorithm Design.</p>
+                <p>I have had the privilege of providing in-house training for companies like Virtusa and Tech Mahindra, preparing students to meet industry standards. Over the past four years, I have conducted certification training on the Automation Anywhere RPA tool and Blue Prism, enabling students to acquire valuable, job-ready skills in automation.</p>
+                <p>Additionally, I have a strong track record in placement preparation, helping students refine their technical and interview skills. As a core member of the Kargil Batch at Chandigarh University, I was one of five trainers responsible for preparing students for placements in both product-based and service-based companies for four years.</p>
+                <p>My mentorship has also led teams to achieve national recognition, including guiding 3 teams to victory in the Smart India Hackathon 2023 and 2024 at the national level.</p>
+                <p>Currently pursuing my Ph.D. in Computer Science and Engineering from Chandigarh University, focusing on a Blockchain-Based Secure Framework for Enhanced Educational Ecosystem.</p>
+                <p>Driven by a commitment to lifelong learning, I aim to bridge the gap between academic knowledge and industry application, ensuring my students are equipped with the skills and mindset to thrive in the rapidly evolving tech landscape.</p>
+                <p class="text-center" style="margin-top: 20px;"><strong>Let's connect and collaborate on initiatives that push the boundaries of innovation and education!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Core Technologies</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Robotic Process Automation</li>
+                        <li><i class="fas fa-check-circle"></i> Blockchain Technology</li>
+                        <li><i class="fas fa-check-circle"></i> Database Administration</li>
+                        <li><i class="fas fa-check-circle"></i> Programming (DS & DAA)</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Analysis</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Data Structures and Algorithms (DSA)</li>
+                        <li><i class="fas fa-check-circle"></i> Design and Analysis of Algorithms (DAA)</li>
+                        <li><i class="fas fa-check-circle"></i> Python for Data Science</li>
+                        <li><i class="fas fa-check-circle"></i> Competitive Programming</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>RPA Tools</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Automation Anywhere (Advanced Professional)</li>
+                        <li><i class="fas fa-check-circle"></i> Blue Prism (Certified Developer)</li>
+                        <li><i class="fas fa-check-circle"></i> UiPath</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Databases</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Oracle SQL (Certified Associate)</li>
+                        <li><i class="fas fa-check-circle"></i> Oracle Database Administration</li>
+                        <li><i class="fas fa-check-circle"></i> DBMS</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Other Skills</h3>
+                    <ul class="skill-list">
+                        <li><i class="fas fa-check-circle"></i> Machine Learning</li>
+                        <li><i class="fas fa-check-circle"></i> Deep Learning & Neural Networks</li>
+                        <li><i class="fas fa-check-circle"></i> Artificial Intelligence</li>
+                        <li><i class="fas fa-check-circle"></i> Student Placement Training</li>
+                        <li><i class="fas fa-check-circle"></i> Hackathon Mentorship</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor</h3>
+                        <p class="date">SPSU, Udaipur | Dec 2022 - Present</p>
+                        <ul class="tasks">
+                            <li>Coordinator for the Smart India Hackathon prelims and mentor to the national winning team that tackled the Ministry of Defense's problem statement.</li>
+                            <li>Mentor to the winning team of the Innovation, Design, and Entrepreneurship (IDE) competition hosted by the Ministry of Education.</li>
+                            <li>Coordinator of the Skill Enhancement Program responsible for organizing bootcamps.</li>
+                            <li>Developed a course on Competitive Programming that has significantly benefited students in their placements.</li>
+                            <li>Developed a course on Blockchain Applications using Solidity Programming, providing students with practical skills in blockchain development.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor</h3>
+                        <p class="date">Chandigarh University | Aug 2017 - Dec 2022</p>
+                        <ul class="tasks">
+                            <li>Established Bot Lab in collaboration with Automation Anywhere and Virtusa.</li>
+                            <li>SPOC for training and learning Robotic Process Automation.</li>
+                            <li>Trained students on DBMS for placements.</li>
+                            <li>Designed and Implemented Coding Bootcamp 2020-2021 in collaboration with IBM.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor</h3>
+                        <p class="date">Lovely Professional University | Aug 2012 - Nov 2016</p>
+                        <ul class="tasks">
+                            <li>Delivered the ELITE Industrial Training Program to students in collaboration with Tech Mahindra.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Ph.D. in Computer Science and Engineering</h3>
+                        <p class="date">Chandigarh University | Feb 2021 - Present</p>
+                        <p>Research Focus: Blockchain Based Secure Framework for Enhanced Educational Ecosystem</p>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>Master of Technology (MTech)</h3>
+                        <p class="date">Lovely Professional University | 2011 - 2012</p>
+                        <p>Specialization: Computer Science</p>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>Bachelor of Technology (BTech) Honors</h3>
+                        <p class="date">Lovely Professional University | 2007 - 2011</p>
+                        <p>Specialization: Computer Science</p>
+                        <p>CGPA: 8.18</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications">
+        <div class="container">
+            <h2 class="section-title">Publications</h2>
+            <div class="publications-container">
+                <div class="publication-item">
+                    <h3>Blockchain in Education 4.0: A Review</h3>
+                    <p>H. Bansal, D. Gupta and D. Anand, 2023 IEEE International Conference on Blockchain and Distributed Systems Security (ICBDS), New Raipur, India, 2023</p>
+                    <p><strong>DOI:</strong> 10.1109/ICBDS58040.2023.10346544</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Analysis of Consensus Algorithms in context of the Blockchain based Applications</h3>
+                    <p>Bansal, Harsh, Divya Gupta, and Darpan Anand. 2022 10th International Conference on Reliability, Infocom Technologies and Optimization (Trends and Future Directions) (ICRITO). IEEE, 2022.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Blockchain and Artificial Intelligence in Telemedicine and Remote Patient Monitoring</h3>
+                    <p>H Bansal, D Gupta, D Anand - Handbook on Augmenting Telehealth Services: Using Artificial Intelligence (1st ed.). CRC Press.</p>
+                    <p><strong>DOI:</strong> 10.1201/9781003346289</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Darkness Behind the Darknet: A Comparative Analysis of Darknet Traffic and the Crimes Behind the Darknet Using Machine Learning</h3>
+                    <p>Mantoo, Bilal Ahmad, and Harsh Bansal. Proceedings of International Conference on Recent Innovations in Computing: ICRIC 2022, Volume 1. Singapore: Springer Nature Singapore, 2023.</p>
+                </div>
+                <div class="publication-item">
+                    <h3>Color Coding Based Detection and Prevention Mechanism for Wormhole Attack in MANET</h3>
+                    <p>Bansal, Harsh, and Gurpreet Singh. International Journal of Computer Science and Information Security (IJCSIS) 14.4.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification-item">
+                    <h3>Faculty Development Program on Artificial Intelligence</h3>
+                </div>
+                <div class="certification-item">
+                    <h3>Python for Data Science and Machine Learning Bootcamp</h3>
+                </div>
+                <div class="certification-item">
+                    <h3>Business Analyst Training</h3>
+                </div>
+                <div class="certification-item">
+                    <h3>Machine Learning Using SAS Viya by SAS</h3>
+                </div>
+                <div class="certification-item">
+                    <h3>Blue Prism Certified Developer</h3>
+                    <p>Credential ID: 803693253</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Neural Networks and Deep Learning</h3>
+                    <p>Taught by Andrew Ng through Coursera (June 2020)</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Automation Anywhere Certified Advanced RPA Professional V10.0</h3>
+                    <p>Credential ID: AAADVC31833514</p>
+                </div>
+                <div class="certification-item">
+                    <h3>EMC Academic Associate, Information Storage and Management</h3>
+                    <p>Certification: EAA-001</p>
+                    <p>Registration Number: 02999108040704</p>
+                </div>
+                <div class="certification-item">
+                    <h3>Introduction to Oracle: SQL</h3>
+                    <p>Test 1Z0-007 with 94% score</p>
+                    <p>Oracle Testing ID: OC0883354</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Training Section -->
+    <section id="trainings">
+        <div class="container">
+            <h2 class="section-title">Trainings</h2>
+            <div class="trainings-container">
+                <div class="training-item">
+                    <h3>Innovation, Design, and Entrepreneurship (IDE)</h3>
+                    <p>Completed a 5-day training program hosted by the Ministry of Education.</p>
+                    <span class="date-badge">Jan 2024 - Feb 2024</span>
+                </div>
+                <div class="training-item">
+                    <h3>RPA Design and Development v3.0</h3>
+                    <p>Educator Readiness Program by UiPath</p>
+                    <span class="date-badge">Aug 2021</span>
+                </div>
+                <div class="training-item">
+                    <h3>Summer School on Artificial Intelligence</h3>
+                    <p>Organized at IIIT Hyderabad</p>
+                    <span class="date-badge">Aug 2021</span>
+                </div>
+                <div class="training-item">
+                    <h3>Train the Trainer Program on Robotic Process Automation</h3>
+                    <p>At Automation Anywhere Bangalore</p>
+                    <span class="date-badge">Sep 2019</span>
+                </div>
+                <div class="training-item">
+                    <h3>Summer School on Computer Vision</h3>
+                    <p>Organized at IIIT Hyderabad</p>
+                    <span class="date-badge">Jul 2019</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Awards Section -->
+    <section id="awards" style="background-color: #f9f9f9;">
+        <div class="container">
+            <h2 class="section-title">Awards & Achievements</h2>
+            <div class="awards-container">
+                <div class="award-item">
+                    <h3>SPSU Award for Bringing Laurels to the University</h3>
+                    <p>Awarded by SPSU for bringing laurels to the university by mentoring 2 teams for Smart India Hackathon 2024 Finals and winning the competition at the national level.</p>
+                    <span class="date-badge">2024</span>
+                </div>
+                <div class="award-item">
+                    <h3>Smart India Hackathon 2024 Mentor</h3>
+                    <p>Mentored the national-level winning team from SPSU at the Smart India Hackathon 2024, hosted by the Ministry of Education and the Government of India.</p>
+                    <span class="date-badge">2024</span>
+                </div>
+                <div class="award-item">
+                    <h3>Smart India Hackathon 2023 Mentor</h3>
+                    <p>Mentored the national-level winning team from SPSU at the Smart India Hackathon 2023, hosted by the Ministry of Education and the Government of India.</p>
+                    <span class="date-badge">Dec 2023</span>
+                </div>
+                <div class="award-item">
+                    <h3>CVMU Hackathon 2024 Mentor</h3>
+                    <p>Mentored the national-level winning team from SPSU at the CVMU Hackathon 2024, hosted by the IIC (an initiative of the Ministry of HRD) and the AICTE Idea Lab.</p>
+                    <span class="date-badge">Mar 2024</span>
+                </div>
+                <div class="award-item">
+                    <h3>SPSU Commendation</h3>
+                    <p>Commended by the Head of Education and the President of SPSU for bringing accolades to the university.</p>
+                    <span class="date-badge">Mar 2024</span>
+                </div>
+                <div class="award-item">
+                    <h3>Best Team Player in Administrative Role</h3>
+                    <p>Awarded on Teacher's Day 2022 at Chandigarh University</p>
+                    <span class="date-badge">Sep 2022</span>
+                </div>
+                <div class="award-item">
+                    <h3>Best Performer in Pre-Earned Credit Program</h3>
+                    <p>Recognized for outstanding performance in the Pre-Earned Credit Program at Chandigarh University</p>
+                    <span class="date-badge">Sep 2021</span>
+                </div>
+                <div class="award-item">
+                    <h3>Tesla Award for Best Digital Innovation in Teaching</h3>
+                    <p>In Engineering Cluster on Teacher's Day 2021 at Chandigarh University</p>
+                    <span class="date-badge">Sep 2021</span>
+                </div>
+                <div class="award-item">
+                    <h3>Virtusa Technology Orientation For Faculty</h3>
+                    <p>Completed specialized technology orientation program for faculty members</p>
+                    <span class="date-badge">2018</span>
+                </div>
+                <div class="award-item">
+                    <h3>Teacher Appreciation Award (Best Faculty)</h3>
+                    <p>For Discipline of Computer Science and Engineering, Lovely Professional University</p>
+                    <span class="date-badge">Sep 2015</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Patent Section -->
+    <section id="patents">
+        <div class="container">
+            <h2 class="section-title">Patents</h2>
+            <div class="publications-container">
+                <div class="publication-item">
+                    <h3>A Blockchain based System for Providing Paper Checking Enhancements for Authorization of a User</h3>
+                    <p>Application No. 202241020516, 2022</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container footer-content">
+            <h3>Harsh Bansal</h3>
+            <p>Assistant Professor & RPA Professional</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/harshbansallive" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:harshbansal@live.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+918283059300"><i class="fas fa-phone"></i></a>
+            </div>
+            <p>&copy; 2025 Harsh Bansal. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
